@@ -16,7 +16,11 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('registration-confirm', require('./components/RegistrationConfirm.vue'));
+Vue.component('return-confirm', require('./components/ReturnConfirm.vue'));
+Vue.component('update-confirm', require('./components/UpdateConfirm.vue'));
+Vue.component('delete-confirm', require('./components/DeleteConfirm.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
 });

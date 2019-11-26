@@ -9,27 +9,11 @@
 
 <!-- コンテンツ -->
 @section('content')
-    <div class="float-right w-25">
-        <div class="float-left mb-4">
-          <form enctype="multipart/form-data"　action="/product-update" method="post" id="update">
-              {{ csrf_field() }}
-              <button type="submit" class="btn btn-outline-primary btn-lg" id="update_btn">更新</button>
-          </form>
-        </div>
-
-        <div class="float-left ml-3">
-          <form action="/product-delete" method="post">
-              {{ csrf_field() }}
-              <input type="hidden" name="ProductID" value="{{ $product->ProductID }}">
-              <button type="submit" class="btn btn-outline-primary btn-lg" id="delete_btn">削除</button>
-          </form>
-        </div>
-
-        <div class="float-left ml-3">
-          <form action="/product-list" method="get">
-              <button type="submit" class="btn btn-outline-primary btn-lg" id="return_btn">戻る</button>
-          </form>
-        </div>
+        <!-- ボタン -->
+    <div id="app" class="float-right w-25">
+        <update-confirm></update-confirm>
+        <delete-confirm :product="{{ $product }}"></delete-confirm>
+        <return-confirm></return-confirm>
     </div>
     <div class="clearfix"></div>
 

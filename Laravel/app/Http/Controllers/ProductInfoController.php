@@ -76,8 +76,8 @@ class ProductInfoController extends Controller
     */
     public function edit(Request $request)
     {
-      if (isset($request->ProductID) === false) {
-          return redirect('product-list');
+      if($this->ProductInfoRepository->existenceCheck($request)) {
+        return redirect('product-list')->with('msg', '<p class="text-danger">商品が存在しません。</p>');
       }
 
       $product = $this->ProductInfoRepository->getProduct($request, $request->ProductID);

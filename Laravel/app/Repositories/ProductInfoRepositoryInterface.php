@@ -37,6 +37,13 @@ interface ProductInfoRepositoryInterface
     public function deletedCheck($product);
 
     /**
+     * 商品存在チェック
+     * 
+     * @param $request
+     * @return
+     */
+    public function existenceCheck($request);
+    /**
      * 商品情報登録
      *
      * @param Request $request

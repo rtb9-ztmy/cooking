@@ -48,7 +48,7 @@ class ProductInfoRepository implements ProductInfoRepositoryInterface
     /**
      * 商品情報削除済み
      *
-     * @param $request
+     * @param $product
      * @return
      */
     public function deletedCheck($product)
@@ -57,7 +57,19 @@ class ProductInfoRepository implements ProductInfoRepositoryInterface
             return true;
         }
     }
-
+    
+    /**
+     * 商品存在チェック
+     * 
+     * @param $request
+     * @return
+     */
+    public function existenceCheck($request)
+    {
+        if (Product::all()->where('ProductID', '=', $request->ProductID)->count() === 0 ) {
+            return true;
+        }
+    }
     /**
      * 商品情報更新
      *

@@ -9,22 +9,15 @@
 
 <!-- コンテンツ -->
 @section('content')
-    <div class="float-right w-25">
-        <div class="float-left mb-4">
-          <form enctype="multipart/form-data" action="/product-registration" method="post" id="registration">
-              {{ csrf_field() }}
-              <button class="btn btn-outline-primary btn-lg" type="submit" id="registration_btn">登録</button>
-          </form>
-        </div>
 
-        <div class="float-left ml-3">
-          <form action="/product-list" method="get" id="return">
-              <button class="btn btn-outline-primary btn-lg" type="submit" name="return" id="return_btn">戻る</button>
-          </form>
-        </div>
+    <!-- ボタン -->
+    <div id="app" class="float-right w-25">
+        <registration-confirm></registration-confirm>
+        <return-confirm></return-confirm>
     </div>
     <div class="clearfix"></div>
 
+    <!-- 入力フォーム -->
     <div class="content w-50 mx-auto">
         <form action="" method="post" class="RegistrationForm">
             <div class="form-group mb-4">
